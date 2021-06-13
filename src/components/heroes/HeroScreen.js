@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import { Redirect, useParams } from 'react-router'
 import { getHeroesById } from '../../selectors/getHeroeById'
+import {heroesIMGcard} from "../../helpers/heroImage"
 
 export const HeroScreen = ({history}) => {
 
@@ -36,7 +37,7 @@ export const HeroScreen = ({history}) => {
         <div className="row mt-5">
             <div className="col-4">
                 <img 
-                src={`./assets/heroes/${heroID}.jpg`}
+                src={heroesIMGcard(`./${heroID}.jpg`).default}
                 alt={superhero}
                 className="img-thumbnail animate__animated animate__fadeInLeft"
                 />
